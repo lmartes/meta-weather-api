@@ -9,8 +9,11 @@ class LocationTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func setupView() {
-        
+    func setupView(data: LocationSearchResponse) {
+        DispatchQueue.main.async {
+            self.title.text = data.getTitle()
+            self.locationType.text = data.getLocationType()
+        }
     }
 
 }
