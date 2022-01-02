@@ -13,6 +13,8 @@
 		BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */; };
 		BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */; };
 		BF0217642780B37200AAFCFA /* LocationSearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0217632780B37200AAFCFA /* LocationSearchDelegate.swift */; };
+		BF021771278204A600AAFCFA /* LocationBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF021770278204A600AAFCFA /* LocationBackgroundView.xib */; };
+		BF021773278205DD00AAFCFA /* LocationBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF021772278205DD00AAFCFA /* LocationBackgroundView.swift */; };
 		BF0436BD277D7DCD009AC8DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436BC277D7DCD009AC8DF /* AppDelegate.swift */; };
 		BF0436BF277D7DCD009AC8DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436BE277D7DCD009AC8DF /* SceneDelegate.swift */; };
 		BF0436C1277D7DCD009AC8DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436C0277D7DCD009AC8DF /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
 		BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
 		BF0217632780B37200AAFCFA /* LocationSearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchDelegate.swift; sourceTree = "<group>"; };
+		BF021770278204A600AAFCFA /* LocationBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationBackgroundView.xib; sourceTree = "<group>"; };
+		BF021772278205DD00AAFCFA /* LocationBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBackgroundView.swift; sourceTree = "<group>"; };
 		BF0436B9277D7DCD009AC8DF /* meta-weather-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meta-weather-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0436BC277D7DCD009AC8DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF0436BE277D7DCD009AC8DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			children = (
 				BF0436C0277D7DCD009AC8DF /* ViewController.swift */,
 				BF02175D277FD61200AAFCFA /* LocationTableViewCell.swift */,
+				BF021772278205DD00AAFCFA /* LocationBackgroundView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			children = (
 				BF0436C7277D7DCE009AC8DF /* LaunchScreen.storyboard */,
 				BF0436C2277D7DCD009AC8DF /* Main.storyboard */,
+				BF021770278204A600AAFCFA /* LocationBackgroundView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0436C9277D7DCE009AC8DF /* LaunchScreen.storyboard in Resources */,
+				BF021771278204A600AAFCFA /* LocationBackgroundView.xib in Resources */,
 				BF0436C6277D7DCE009AC8DF /* Assets.xcassets in Resources */,
 				BF0436C4277D7DCD009AC8DF /* Main.storyboard in Resources */,
 				BF021758277E115400AAFCFA /* LatoFont in Resources */,
@@ -257,6 +264,7 @@
 				BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */,
 				BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */,
 				BF0217642780B37200AAFCFA /* LocationSearchDelegate.swift in Sources */,
+				BF021773278205DD00AAFCFA /* LocationBackgroundView.swift in Sources */,
 				BF0436C1277D7DCD009AC8DF /* ViewController.swift in Sources */,
 				BF0436BD277D7DCD009AC8DF /* AppDelegate.swift in Sources */,
 				BF02175E277FD61200AAFCFA /* LocationTableViewCell.swift in Sources */,

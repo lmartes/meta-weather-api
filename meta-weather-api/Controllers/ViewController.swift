@@ -1,8 +1,9 @@
 import UIKit
 
-class ViewController: UIViewController, LocationSearchDelegate {
+class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var locationBackgroundView: LocationBackgroundView!
     
     private var locationSearchManager: LocationSearchManager = LocationSearchManager()
     private var locationsSearch: [LocationSearchResponse] = []
@@ -10,6 +11,7 @@ class ViewController: UIViewController, LocationSearchDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
+        setupView()
     }
 
     private func setDelegates() {
@@ -19,21 +21,48 @@ class ViewController: UIViewController, LocationSearchDelegate {
         locationSearchManager.delegate = self
     }
     
+    private func setupView() {
+        showLocationBackground(with: "Here we go... Find a location")
+    }
+    
+    private func showLocationBackground(with message: String) {
+        locationBackgroundView.isHidden = false
+        locationBackgroundView.setupView(message: message)
+        tableView.backgroundView = locationBackgroundView
+        tableView.reloadData()
+    }
+
+}
+
+//MARK: - Location Search Delegate
+extension ViewController: LocationSearchDelegate {
     func didUpdateLocationSearch(data: [LocationSearchResponse]) {
+        if data.isEmpty {
+            locationsSearch = []
+            showLocationBackground(with: "No locations found")
+            return
+        }
+        
         locationsSearch = data
         tableView.reloadData()
     }
     
     func didFailWithError(error: Error) {
-        //TODO: Add Modal "Location search is not valid."
-        print("didFailWithError Error: \(error)")
+        locationsSearch = []
+        showLocationBackground(with: "Location search is not valid.")
     }
-
 }
 
 //MARK: - Search Bar Delegate
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        locationBackgroundView.isHidden = true
+        if searchText.isEmpty {
+            locationsSearch = []
+            showLocationBackground(with: "Try again... Find a location")
+            return
+        }
+        
         locationSearchManager.searchLocation(location: searchText)
     }
 }
@@ -57,6 +86,3 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-
-
