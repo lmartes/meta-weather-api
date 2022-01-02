@@ -10,7 +10,9 @@
 		AF865F447BB986532758E459 /* Pods_meta_weather_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D19EC7094759F9EDC95752C /* Pods_meta_weather_api.framework */; };
 		BF021758277E115400AAFCFA /* LatoFont in Resources */ = {isa = PBXBuildFile; fileRef = BF021757277E115400AAFCFA /* LatoFont */; };
 		BF02175E277FD61200AAFCFA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175D277FD61200AAFCFA /* LocationTableViewCell.swift */; };
-		BF021760277FD94B00AAFCFA /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175F277FD94B00AAFCFA /* LocationSearch.swift */; };
+		BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */; };
+		BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */; };
+		BF0217642780B37200AAFCFA /* LocationSearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0217632780B37200AAFCFA /* LocationSearchDelegate.swift */; };
 		BF0436BD277D7DCD009AC8DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436BC277D7DCD009AC8DF /* AppDelegate.swift */; };
 		BF0436BF277D7DCD009AC8DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436BE277D7DCD009AC8DF /* SceneDelegate.swift */; };
 		BF0436C1277D7DCD009AC8DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0436C0277D7DCD009AC8DF /* ViewController.swift */; };
@@ -24,7 +26,9 @@
 		2ACF88862D813B56B8A7A35D /* Pods-meta-weather-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meta-weather-api.debug.xcconfig"; path = "Target Support Files/Pods-meta-weather-api/Pods-meta-weather-api.debug.xcconfig"; sourceTree = "<group>"; };
 		BF021757277E115400AAFCFA /* LatoFont */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LatoFont; path = ../../../motus/LatoFont; sourceTree = "<group>"; };
 		BF02175D277FD61200AAFCFA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
-		BF02175F277FD94B00AAFCFA /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
+		BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
+		BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
+		BF0217632780B37200AAFCFA /* LocationSearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchDelegate.swift; sourceTree = "<group>"; };
 		BF0436B9277D7DCD009AC8DF /* meta-weather-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meta-weather-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0436BC277D7DCD009AC8DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF0436BE277D7DCD009AC8DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +90,8 @@
 		BF02175B277F8EAC00AAFCFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF02175F277FD94B00AAFCFA /* LocationSearch.swift */,
+				BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */,
+				BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			children = (
 				BF0436BC277D7DCD009AC8DF /* AppDelegate.swift */,
 				BF0436BE277D7DCD009AC8DF /* SceneDelegate.swift */,
+				BF0217632780B37200AAFCFA /* LocationSearchDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -248,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF021760277FD94B00AAFCFA /* LocationSearch.swift in Sources */,
+				BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */,
+				BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */,
+				BF0217642780B37200AAFCFA /* LocationSearchDelegate.swift in Sources */,
 				BF0436C1277D7DCD009AC8DF /* ViewController.swift in Sources */,
 				BF0436BD277D7DCD009AC8DF /* AppDelegate.swift in Sources */,
 				BF02175E277FD61200AAFCFA /* LocationTableViewCell.swift in Sources */,
