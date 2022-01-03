@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-LightItalic.ttf">
-            <string>Lato-LightItalic</string>
+        <array key="Lato-Italic.ttf">
+            <string>Lato-Italic</string>
         </array>
     </customFonts>
     <objects>
@@ -32,8 +32,8 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here we go... Find a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy8-5u-98c">
-                    <rect key="frame" x="80.5" y="186" width="253" height="28"/>
-                    <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="23"/>
+                    <rect key="frame" x="77" y="186" width="260" height="28"/>
+                    <fontDescription key="fontDescription" name="Lato-Italic" family="Lato" pointSize="23"/>
                     <color key="textColor" red="0.43921568630000002" green="0.45098039220000002" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

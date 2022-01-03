@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AF865F447BB986532758E459 /* Pods_meta_weather_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D19EC7094759F9EDC95752C /* Pods_meta_weather_api.framework */; };
-		BF021758277E115400AAFCFA /* LatoFont in Resources */ = {isa = PBXBuildFile; fileRef = BF021757277E115400AAFCFA /* LatoFont */; };
 		BF02175E277FD61200AAFCFA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175D277FD61200AAFCFA /* LocationTableViewCell.swift */; };
 		BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */; };
 		BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */; };
@@ -21,12 +20,12 @@
 		BF0436C4277D7DCD009AC8DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0436C2277D7DCD009AC8DF /* Main.storyboard */; };
 		BF0436C6277D7DCE009AC8DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0436C5277D7DCE009AC8DF /* Assets.xcassets */; };
 		BF0436C9277D7DCE009AC8DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0436C7277D7DCE009AC8DF /* LaunchScreen.storyboard */; };
+		BF238C852782BF5700260E74 /* LatoFont in Resources */ = {isa = PBXBuildFile; fileRef = BF238C842782BF5700260E74 /* LatoFont */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D19EC7094759F9EDC95752C /* Pods_meta_weather_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meta_weather_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACF88862D813B56B8A7A35D /* Pods-meta-weather-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meta-weather-api.debug.xcconfig"; path = "Target Support Files/Pods-meta-weather-api/Pods-meta-weather-api.debug.xcconfig"; sourceTree = "<group>"; };
-		BF021757277E115400AAFCFA /* LatoFont */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LatoFont; path = ../../../motus/LatoFont; sourceTree = "<group>"; };
 		BF02175D277FD61200AAFCFA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
 		BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		BF0436C5277D7DCE009AC8DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0436C8277D7DCE009AC8DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF0436CA277D7DCE009AC8DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF238C842782BF5700260E74 /* LatoFont */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LatoFont; sourceTree = "<group>"; };
 		C52361F77A9EAE3594C17785 /* Pods-meta-weather-api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meta-weather-api.release.xcconfig"; path = "Target Support Files/Pods-meta-weather-api/Pods-meta-weather-api.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +135,7 @@
 			children = (
 				BF0436CA277D7DCE009AC8DF /* Info.plist */,
 				BF0436C5277D7DCE009AC8DF /* Assets.xcassets */,
-				BF021757277E115400AAFCFA /* LatoFont */,
+				BF238C842782BF5700260E74 /* LatoFont */,
 				BF02175C277F8EBB00AAFCFA /* Delegates */,
 				BF02175B277F8EAC00AAFCFA /* Models */,
 				BF02175A277F8EA300AAFCFA /* Views */,
@@ -207,8 +207,8 @@
 				BF0436C9277D7DCE009AC8DF /* LaunchScreen.storyboard in Resources */,
 				BF021771278204A600AAFCFA /* LocationBackgroundView.xib in Resources */,
 				BF0436C6277D7DCE009AC8DF /* Assets.xcassets in Resources */,
+				BF238C852782BF5700260E74 /* LatoFont in Resources */,
 				BF0436C4277D7DCD009AC8DF /* Main.storyboard in Resources */,
-				BF021758277E115400AAFCFA /* LatoFont in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

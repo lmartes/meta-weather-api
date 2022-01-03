@@ -23,16 +23,16 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Lato-Black</string>
-		<string>Lato-BlackItalic</string>
-		<string>Lato-Bold</string>
-		<string>Lato-BoldItalic</string>
-		<string>Lato-Italic</string>
-		<string>Lato-Light</string>
-		<string>Lato-LightItalic</string>
-		<string>Lato-Regular</string>
-		<string>Lato-Thin</string>
-		<string>Lato-ThinItalic</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-BlackItalic.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-BoldItalic.ttf</string>
+		<string>Lato-Italic.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-LightItalic.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-Thin.ttf</string>
+		<string>Lato-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>
