@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class LocationSearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var locationBackgroundView: LocationBackgroundView!
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - Location Search Delegate
-extension ViewController: LocationSearchDelegate {
+extension LocationSearchViewController: LocationSearchDelegate {
     func didUpdateLocationSearch(data: [LocationSearchResponse]) {
         if data.isEmpty {
             locationsSearch = []
@@ -54,7 +54,7 @@ extension ViewController: LocationSearchDelegate {
 }
 
 //MARK: - Search Bar Delegate
-extension ViewController: UISearchBarDelegate {
+extension LocationSearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         locationBackgroundView.isHidden = true
         if searchText.isEmpty {
@@ -68,7 +68,7 @@ extension ViewController: UISearchBarDelegate {
 }
 
 //MARK: - Table View Delegate
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension LocationSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locationsSearch.count
     }
