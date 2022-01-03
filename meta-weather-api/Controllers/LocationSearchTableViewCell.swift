@@ -1,7 +1,7 @@
 import UIKit
 
-/// identifier: locationCellIdentifier
-class LocationTableViewCell: UITableViewCell {
+class LocationSearchTableViewCell: UITableViewCell {
+    let identifier: String = "locationSearchCellIdentifier"
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var locationType: UILabel!
     

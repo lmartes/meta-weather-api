@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCellIdentifier" rowHeight="60" id="gby-f7-pEa" customClass="LocationTableViewCell" customModule="meta_weather_api" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationSearchCellIdentifier" rowHeight="60" id="gby-f7-pEa" customClass="LocationSearchTableViewCell" customModule="meta_weather_api" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gby-f7-pEa" id="Cyn-hq-v8s">
@@ -112,16 +112,17 @@
                         <outlet property="locationBackgroundView" destination="wul-G1-fdh" id="kUN-64-aqJ"/>
                         <outlet property="searchBar" destination="T06-1y-4r8" id="LXD-7H-1uS"/>
                         <outlet property="tableView" destination="NIM-qI-NhX" id="3nc-Ad-hbC"/>
+                        <segue destination="ndi-61-3zf" kind="presentation" identifier="goToLocationDetail" modalPresentationStyle="fullScreen" id="QQd-YP-C96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="69.642857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Detail View Controller-->
         <scene sceneID="3ge-SB-yRb">
             <objects>
-                <viewController id="ndi-61-3zf" sceneMemberID="viewController">
+                <viewController id="ndi-61-3zf" customClass="LocationDetailViewController" customModule="meta_weather_api" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ucd-Z1-k0b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,8 +142,8 @@
                                         <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8e-51-4GS">
-                                        <rect key="frame" x="292.5" y="0.0" width="61.5" height="100"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8e-51-4GS" userLabel="Information View">
+                                        <rect key="frame" x="294" y="0.0" width="60" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jf8-OE-iPc">
                                                 <rect key="frame" x="0.0" y="0.0" width="27" height="15"/>
@@ -162,6 +163,12 @@
                                                 <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:35 a.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIV-WX-tqc">
+                                                <rect key="frame" x="0.0" y="48" width="48" height="15"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                <color key="textColor" red="0.41176470590000003" green="0.42745098040000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6u-bJ-Wob">
                                                 <rect key="frame" x="0.0" y="70" width="37" height="15"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
@@ -170,12 +177,6 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:06 p.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KON-3w-3u2">
                                                 <rect key="frame" x="0.0" y="85" width="48" height="15"/>
-                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                                                <color key="textColor" red="0.41176470590000003" green="0.42745098040000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:35 a.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIV-WX-tqc">
-                                                <rect key="frame" x="0.0" y="48" width="48" height="15"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                 <color key="textColor" red="0.41176470590000003" green="0.42745098040000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -190,6 +191,7 @@
                                             <constraint firstItem="Jf8-OE-iPc" firstAttribute="top" secondItem="D8e-51-4GS" secondAttribute="top" id="YeP-60-W9t"/>
                                             <constraint firstAttribute="height" constant="100" id="YgM-b8-K82"/>
                                             <constraint firstItem="kZN-iv-Buq" firstAttribute="leading" secondItem="D8e-51-4GS" secondAttribute="leading" id="efA-OY-QOg"/>
+                                            <constraint firstAttribute="width" constant="60" id="hLn-fR-9uf"/>
                                             <constraint firstItem="Jf8-OE-iPc" firstAttribute="leading" secondItem="D8e-51-4GS" secondAttribute="leading" id="qDk-TI-N1d"/>
                                             <constraint firstAttribute="bottom" secondItem="KON-3w-3u2" secondAttribute="bottom" id="qGJ-YZ-59a"/>
                                             <constraint firstItem="V6u-bJ-Wob" firstAttribute="top" secondItem="xIV-WX-tqc" secondAttribute="bottom" constant="7" id="rLh-hQ-K62"/>
@@ -205,7 +207,6 @@
                                     <constraint firstItem="qCH-gF-a7n" firstAttribute="leading" secondItem="6Rj-Pf-tt2" secondAttribute="leading" id="QCC-VH-XtO"/>
                                     <constraint firstAttribute="bottom" secondItem="D8e-51-4GS" secondAttribute="bottom" id="Upg-4f-sm6"/>
                                     <constraint firstItem="fyi-0c-jBL" firstAttribute="top" secondItem="qCH-gF-a7n" secondAttribute="bottom" constant="1" id="aTW-rs-V57"/>
-                                    <constraint firstItem="D8e-51-4GS" firstAttribute="leading" secondItem="qCH-gF-a7n" secondAttribute="trailing" constant="120" id="fi0-Xc-N1W"/>
                                     <constraint firstAttribute="height" constant="100" id="pS2-fH-q4D"/>
                                     <constraint firstItem="D8e-51-4GS" firstAttribute="top" secondItem="6Rj-Pf-tt2" secondAttribute="top" id="rR6-YN-aNM"/>
                                 </constraints>
@@ -307,6 +308,15 @@
                             <constraint firstItem="A93-zq-Ggg" firstAttribute="trailing" secondItem="hw1-PJ-RNh" secondAttribute="trailing" constant="30" id="oCN-oW-Kb9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eeI-D9-myR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hw1-PJ-RNh" id="nXd-Wo-Irr"/>
+                        <outlet property="locationTitle" destination="qCH-gF-a7n" id="t9g-Xm-dEQ"/>
+                        <outlet property="parentTitle" destination="fyi-0c-jBL" id="DWD-gp-ENE"/>
+                        <outlet property="sunrise" destination="xIV-WX-tqc" id="NYu-er-ICa"/>
+                        <outlet property="sunset" destination="KON-3w-3u2" id="8nH-rv-E9b"/>
+                        <outlet property="time" destination="kZN-iv-Buq" id="hae-Il-tCj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxi-6b-3Js" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
