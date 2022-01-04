@@ -1,7 +1,7 @@
 import Foundation
 import ObjectMapper
 
-struct LocationSearchResponse: Mappable {
+struct ParentLocationData: Mappable {
     private var title: String = ""
     private var locationType: String = ""
     private var woeid: Int = 0
@@ -22,11 +22,11 @@ struct LocationSearchResponse: Mappable {
         return title
     }
     
-    func getLocationType() -> String {
-        return locationType
+    func getLatitude() -> String {
+        return ""
     }
     
-    func getWoeid() -> Int {
-        return woeid
+    func getLongitude() -> String {
+        return ""
     }
 }
