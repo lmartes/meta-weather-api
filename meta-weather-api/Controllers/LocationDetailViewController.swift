@@ -1,7 +1,6 @@
 import UIKit
 
 class LocationDetailViewController: UIViewController {
-    let segueIdentifier: String = "goToLocationDetail"
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var parentTitle: UILabel!
     @IBOutlet weak var time: UILabel!

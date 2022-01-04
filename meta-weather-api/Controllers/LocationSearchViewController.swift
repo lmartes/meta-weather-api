@@ -33,19 +33,17 @@ class LocationSearchViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "goToLocationDetail" else {
-            return
+        if segue.identifier == "goToLocationDetail" {
+            guard let locationDetailViewController = segue.destination as? LocationDetailViewController else {
+                return
+            }
+            
+            guard let sender = sender as? LocationSearchResponse else {
+                return
+            }
+            
+            locationDetailViewController.locationSearchResponse = sender
         }
-        
-        guard let locationDetailViewController = segue.destination as? LocationDetailViewController else {
-            return
-        }
-        
-        guard let sender = sender as? LocationSearchResponse else {
-            return
-        }
-        
-        locationDetailViewController.locationSearchResponse = sender
     }
 }
 
@@ -89,7 +87,7 @@ extension LocationSearchViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let locationCell = tableView.dequeueReusableCell(withIdentifier: LocationSearchTableViewCell().identifier) as? LocationSearchTableViewCell else {
+        guard let locationCell = tableView.dequeueReusableCell(withIdentifier: Identifier.locationSearchCell.rawValue) as? LocationSearchTableViewCell else {
             return UITableViewCell()
         }
         locationCell.setupView(data: locationsSearch[indexPath.row])
@@ -97,8 +95,17 @@ extension LocationSearchViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: LocationDetailViewController().segueIdentifier, sender: locationsSearch[indexPath.row])
+        self.performSegue(withIdentifier: Segue.goToLocationDetail.rawValue, sender: locationsSearch[indexPath.row])
+    }
+}
+
+//MARK: - Segue & Identifier
+extension LocationSearchViewController {
+    enum Segue: String {
+        case goToLocationDetail = "goToLocationDetail"
     }
     
-    //TODO: - Create enum to add identifier
+    enum Identifier: String {
+        case locationSearchCell = "locationSearchCellIdentifier"
+    }
 }
