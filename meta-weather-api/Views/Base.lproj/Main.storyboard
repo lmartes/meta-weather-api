@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Location Search View Controller-->
+        <!--MetaWeather API-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LocationSearchViewController" customModule="meta_weather_api" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                             <constraint firstItem="wul-G1-fdh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t7n-PD-f8K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tOC-g7-xM2">
+                    <navigationItem key="navigationItem" title="MetaWeather API" id="tOC-g7-xM2">
                         <barButtonItem key="backBarButtonItem" title="Back" id="8hB-kY-DOG"/>
                     </navigationItem>
                     <connections>
@@ -122,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="984.05797101449286" y="69.642857142857139"/>
         </scene>
-        <!--Location Detail View Controller-->
+        <!--Location Detail-->
         <scene sceneID="3ge-SB-yRb">
             <objects>
                 <viewController id="ndi-61-3zf" customClass="LocationDetailViewController" customModule="meta_weather_api" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,20 +217,27 @@
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hw1-PJ-RNh">
                                 <rect key="frame" x="30" y="238" width="354" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="10" id="b2b-jb-Ef2">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="b2b-jb-Ef2">
                                     <size key="itemSize" width="110" height="157"/>
+                                    <size key="estimatedItemSize" width="110" height="157"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aqS-1o-zEJ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationDetailCellIdentifier" id="aqS-1o-zEJ" customClass="LocationDetailCollectionViewCell" customModule="meta_weather_api" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="157"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FMe-G2-mUx">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ed-86x">
+                                                    <rect key="frame" x="5" y="20" width="26" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                    <color key="textColor" red="0.13725490200000001" green="0.32156862749999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QVE-X4-6gJ">
                                                     <rect key="frame" x="5" y="47" width="50" height="50"/>
                                                     <constraints>
@@ -248,7 +255,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXb-28-H4X">
-                                                            <rect key="frame" x="27" y="0.0" width="27" height="14"/>
+                                                            <rect key="frame" x="30" y="0.0" width="27" height="14"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="0.41176470590000003" green="0.42745098040000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -260,7 +267,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paQ-AZ-f3d">
-                                                            <rect key="frame" x="24.5" y="14" width="27" height="14"/>
+                                                            <rect key="frame" x="27.5" y="14" width="27" height="14"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="0.41176470590000003" green="0.42745098040000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -268,22 +275,16 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="qQO-Qw-lE9" firstAttribute="leading" secondItem="B02-lL-q9q" secondAttribute="leading" id="KyQ-dL-1Yk"/>
-                                                        <constraint firstItem="zXb-28-H4X" firstAttribute="leading" secondItem="tFo-ge-rk6" secondAttribute="trailing" id="NKa-Ir-COv"/>
+                                                        <constraint firstItem="zXb-28-H4X" firstAttribute="leading" secondItem="tFo-ge-rk6" secondAttribute="trailing" constant="3" id="NKa-Ir-COv"/>
                                                         <constraint firstItem="tFo-ge-rk6" firstAttribute="leading" secondItem="B02-lL-q9q" secondAttribute="leading" id="QjH-ld-CmO"/>
                                                         <constraint firstItem="qQO-Qw-lE9" firstAttribute="top" secondItem="tFo-ge-rk6" secondAttribute="bottom" id="TZH-Dt-hiE"/>
                                                         <constraint firstItem="tFo-ge-rk6" firstAttribute="top" secondItem="B02-lL-q9q" secondAttribute="top" id="Umr-54-NQd"/>
                                                         <constraint firstItem="paQ-AZ-f3d" firstAttribute="top" secondItem="zXb-28-H4X" secondAttribute="bottom" id="b28-86-2jD"/>
                                                         <constraint firstItem="zXb-28-H4X" firstAttribute="top" secondItem="B02-lL-q9q" secondAttribute="top" id="hoG-tX-eMI"/>
                                                         <constraint firstAttribute="height" constant="30" id="n9U-L6-hiG"/>
-                                                        <constraint firstItem="paQ-AZ-f3d" firstAttribute="leading" secondItem="qQO-Qw-lE9" secondAttribute="trailing" id="p9s-do-atA"/>
+                                                        <constraint firstItem="paQ-AZ-f3d" firstAttribute="leading" secondItem="qQO-Qw-lE9" secondAttribute="trailing" constant="3" id="p9s-do-atA"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ed-86x">
-                                                    <rect key="frame" x="5" y="20" width="26" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                                    <color key="textColor" red="0.13725490200000001" green="0.32156862749999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="B02-lL-q9q" firstAttribute="leading" secondItem="FMe-G2-mUx" secondAttribute="leading" constant="5" id="9td-QO-CjX"/>
@@ -295,6 +296,12 @@
                                                 <constraint firstItem="B02-lL-q9q" firstAttribute="top" secondItem="QVE-X4-6gJ" secondAttribute="bottom" constant="10" id="mWN-wj-z8E"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="EIb-Ed-86x" id="m1a-kY-zld"/>
+                                            <outlet property="imageState" destination="QVE-X4-6gJ" id="x82-vz-Zb1"/>
+                                            <outlet property="maxTemp" destination="zXb-28-H4X" id="epK-8e-sH0"/>
+                                            <outlet property="minTemp" destination="paQ-AZ-f3d" id="l5I-e4-iGq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -311,7 +318,7 @@
                             <constraint firstItem="A93-zq-Ggg" firstAttribute="trailing" secondItem="hw1-PJ-RNh" secondAttribute="trailing" constant="30" id="oCN-oW-Kb9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eeI-D9-myR"/>
+                    <navigationItem key="navigationItem" title="Location Detail" id="eeI-D9-myR"/>
                     <connections>
                         <outlet property="collectionView" destination="hw1-PJ-RNh" id="nXd-Wo-Irr"/>
                         <outlet property="headerView" destination="6Rj-Pf-tt2" id="FYT-Q0-BcX"/>

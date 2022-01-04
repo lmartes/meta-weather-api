@@ -24,11 +24,11 @@ struct ConsolidatedWeatherData: Mappable {
         return weatherState
     }
     
-    func getMaxTemperature() -> Double {
-        return maxTemp
+    func getMaxTemperature() -> String {
+        return String(format: "%.1f", maxTemp) + "°C"
     }
     
-    func getMinTemperature() -> Double {
-        return minTemp
+    func getMinTemperature() -> String {
+        return String(format:"%.1f", minTemp) + "°C"
     }
 }

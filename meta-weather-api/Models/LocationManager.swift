@@ -31,4 +31,12 @@ struct LocationManager {
         }
         return decoderData
     }
+    
+    func fetchImageBasedOnTheState(state: String) {
+        let imageURL = "https://www.metaweather.com/static/img/weather/png/64/\(state).png"
+        AF.request(imageURL).response { (response) in
+            //Continuar la solicitud de la img
+        }
+    }
+    
 }

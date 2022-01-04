@@ -12,6 +12,7 @@ class LocationDetailViewController: UIViewController {
     var locationSearchResponse: LocationSearchResponse = LocationSearchResponse()
     private var locationManager: LocationManager = LocationManager()
     private var location: LocationResponse = LocationResponse()
+    private var consolidatedWeather: [ConsolidatedWeatherData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,9 @@ class LocationDetailViewController: UIViewController {
 extension LocationDetailViewController: LocationDelegate {
     func didUpdateLocation(data: LocationResponse) {
         location = data
+        consolidatedWeather = location.getConsolidateWeather()
         setupView()
+        collectionView.reloadData()
     }
     
     func didFailWithError(error: Error) {
@@ -59,11 +62,27 @@ extension LocationDetailViewController: LocationDelegate {
 
 //MARK: - Collection View Delegate
 extension LocationDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return location.getConsolidateWeather().count
+        return consolidatedWeather.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let locationDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.locationDetailCellIdentifier.rawValue, for: indexPath as IndexPath) as? LocationDetailCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        locationDetailCell.setupView(data: consolidatedWeather[indexPath.row])
+        return locationDetailCell
+    }
+    
+}
+
+//MARK: - Identifier
+extension LocationDetailViewController {
+    enum Identifier: String {
+        case locationDetailCellIdentifier = "locationDetailCellIdentifier"
     }
 }
