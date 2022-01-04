@@ -31,18 +31,31 @@ struct LocationResponse: Mappable {
     }
     
     func getTime() -> String {
-        return time
+        return formatDate(date: time)
     }
     
     func getSunrise() -> String {
-        return sunrise
+        return formatDate(date: sunrise)
     }
     
     func getSunset() -> String {
-        return sunset
+        return formatDate(date: sunset)
     }
     
     func getConsolidateWeather() -> [ConsolidatedWeatherData] {
         return consolidatedWeather
+    }
+    
+    private func formatDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        guard let date = dateFormatter.date(from: date) else {
+            print("Formatting could not be done")
+            return time
+        }
+        dateFormatter.dateFormat = "HH:mm a"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
 }

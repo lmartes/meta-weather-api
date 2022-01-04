@@ -33,7 +33,7 @@ class LocationDetailViewController: UIViewController {
         showElementsView()
         locationTitle.text = location.getTitle()
         parentTitle.text = location.getParentTitle()
-        time.text = location.getTitle()
+        time.text = location.getTime()
         sunrise.text = location.getSunrise()
         sunset.text = location.getSunset()
     }
