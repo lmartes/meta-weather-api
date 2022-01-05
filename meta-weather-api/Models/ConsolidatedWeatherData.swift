@@ -17,10 +17,10 @@ struct ConsolidatedWeatherData: Mappable {
     }
     
     func getDate() -> String {
-        return date
+        return date.format(with: "yyyy-MM-dd", outFormat: "EEE d MMM")
     }
     
-    func getImageBasedOnTheState() -> String {
+    func getweatherState() -> String {
         return weatherState
     }
     

@@ -33,9 +33,19 @@ struct LocationManager {
     }
     
     func fetchImageBasedOnTheState(state: String) {
-        let imageURL = "https://www.metaweather.com/static/img/weather/png/64/\(state).png"
-        AF.request(imageURL).response { (response) in
-            //Continuar la solicitud de la img
+        let imageURL = "https://www.metaweather.com/static/img/weather/png/\(state).png"
+        AF.request(imageURL, method: .get).response { (response) in
+            handleImageResponse(response: response)
+        }
+    }
+    
+    private func handleImageResponse(response: AFDataResponse<Data?>) {
+        if let error = response.error {
+            delegate?.didUpdateImageFailWithError(error: error)
+        }
+        
+        if let data = response.data {
+            delegate?.didUpdateImage(data: data)
         }
     }
     

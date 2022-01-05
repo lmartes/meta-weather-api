@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844F05842786644000721A23 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F05832786644000721A23 /* Extension + String.swift */; };
 		AF865F447BB986532758E459 /* Pods_meta_weather_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D19EC7094759F9EDC95752C /* Pods_meta_weather_api.framework */; };
 		BF02175E277FD61200AAFCFA /* LocationSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175D277FD61200AAFCFA /* LocationSearchTableViewCell.swift */; };
 		BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		1D19EC7094759F9EDC95752C /* Pods_meta_weather_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meta_weather_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACF88862D813B56B8A7A35D /* Pods-meta-weather-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meta-weather-api.debug.xcconfig"; path = "Target Support Files/Pods-meta-weather-api/Pods-meta-weather-api.debug.xcconfig"; sourceTree = "<group>"; };
+		844F05832786644000721A23 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		BF02175D277FD61200AAFCFA /* LocationSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewCell.swift; sourceTree = "<group>"; };
 		BF02175F277FD94B00AAFCFA /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
 		BF0217612780B30A00AAFCFA /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				BF51F31F27840CF500004E7F /* LocationResponse.swift */,
 				BF51F32127846F0300004E7F /* ConsolidatedWeatherData.swift */,
 				BF51F3252784859400004E7F /* ParentLocationData.swift */,
+				844F05832786644000721A23 /* Extension + String.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				BF51F3262784859400004E7F /* ParentLocationData.swift in Sources */,
 				BF0217622780B30A00AAFCFA /* LocationSearchManager.swift in Sources */,
+				844F05842786644000721A23 /* Extension + String.swift in Sources */,
 				BF021760277FD94B00AAFCFA /* LocationSearchResponse.swift in Sources */,
 				BF0217642780B37200AAFCFA /* LocationSearchDelegate.swift in Sources */,
 				BF51F328278487F200004E7F /* LocationDelegate.swift in Sources */,

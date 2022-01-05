@@ -47,15 +47,6 @@ struct LocationResponse: Mappable {
     }
     
     private func formatDate(date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        guard let date = dateFormatter.date(from: date) else {
-            print("Formatting could not be done")
-            return time
-        }
-        dateFormatter.dateFormat = "HH:mm a"
-        let dateString = dateFormatter.string(from: date)
-        return dateString
+        return time.format(with: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ", outFormat: "HH:mm a")
     }
 }

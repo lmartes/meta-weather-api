@@ -56,7 +56,15 @@ extension LocationDetailViewController: LocationDelegate {
     }
     
     func didFailWithError(error: Error) {
-        print("hubo un error: ", error)
+        showSimpleAlert()
+    }
+    
+    func showSimpleAlert() {
+        let alert = UIAlertController(title: "Error!", message: "There was an error, try again.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Back", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -77,7 +85,6 @@ extension LocationDetailViewController: UICollectionViewDelegate, UICollectionVi
         locationDetailCell.setupView(data: consolidatedWeather[indexPath.row])
         return locationDetailCell
     }
-    
 }
 
 //MARK: - Identifier
