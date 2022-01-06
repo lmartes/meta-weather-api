@@ -1,7 +1,6 @@
 import UIKit
 
-/// identifier: locationCellIdentifier
-class LocationTableViewCell: UITableViewCell {
+class LocationSearchTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var locationType: UILabel!
     

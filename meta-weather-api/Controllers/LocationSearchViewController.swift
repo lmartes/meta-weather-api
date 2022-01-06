@@ -31,7 +31,20 @@ class LocationSearchViewController: UIViewController {
         tableView.backgroundView = locationBackgroundView
         tableView.reloadData()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLocationDetail" {
+            guard let locationDetailViewController = segue.destination as? LocationDetailViewController else {
+                return
+            }
+            
+            guard let sender = sender as? LocationSearchResponse else {
+                return
+            }
+            
+            locationDetailViewController.locationSearchResponse = sender
+        }
+    }
 }
 
 //MARK: - Location Search Delegate
@@ -74,7 +87,7 @@ extension LocationSearchViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let locationCell = tableView.dequeueReusableCell(withIdentifier: "locationCellIdentifier") as? LocationTableViewCell else {
+        guard let locationCell = tableView.dequeueReusableCell(withIdentifier: Identifier.locationSearchCell.rawValue) as? LocationSearchTableViewCell else {
             return UITableViewCell()
         }
         locationCell.setupView(data: locationsSearch[indexPath.row])
@@ -82,7 +95,17 @@ extension LocationSearchViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("row selected: ", indexPath.row)
+        self.performSegue(withIdentifier: Segue.goToLocationDetail.rawValue, sender: locationsSearch[indexPath.row])
+    }
+}
+
+//MARK: - Segue & Identifier
+extension LocationSearchViewController {
+    enum Segue: String {
+        case goToLocationDetail = "goToLocationDetail"
     }
     
+    enum Identifier: String {
+        case locationSearchCell = "locationSearchCellIdentifier"
+    }
 }
